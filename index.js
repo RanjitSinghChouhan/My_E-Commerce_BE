@@ -6,7 +6,7 @@ require('./models');
 const app = express();
 const port = 8000;
 
-mongoose.connect('mongodb+srv://ranjit:zxJyoCOqOBIqFmDa@my-ecommerce.nmdsza1.mongodb.net/ecom').then(()=>console.log('Connection Successful'));
+mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@my-ecommerce.nmdsza1.mongodb.net/ecom`).then(()=>console.log('Connection Successful'));
 
 app.use(express.json());
 app.use(cors('*'))
